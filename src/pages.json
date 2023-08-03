@@ -1,0 +1,28 @@
+{
+    "pages": [
+        {
+            "path": "pages/tabbar/index",
+            "style": {
+                "navigationBarTitleText": "首页",
+                "titleNView": true
+            }
+        }
+    ],
+    "globalStyle": {
+        "pageOrientation": "auto",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#456dea",
+        "backgroundColor": "#f3f3f3",
+        "color": "#ffffff",
+        "h5": {
+            "navigationStyle": "custom"
+        }
+    },
+    "tabBar": {
+        "selectedColor": "#456dea",
+        "color": "#777777",
+        "backgroundColor": "#fff",
+        "list": []
+    }
+}

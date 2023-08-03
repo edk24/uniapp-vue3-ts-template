@@ -1,0 +1,247 @@
+{
+    "name" : "筑护理护士端",
+    "appid" : "__UNI__8FA0E90",
+    "description" : "",
+    "versionName" : "1.1.1",
+    "versionCode" : 111,
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "screenOrientation" : [ "portrait-primary", "landscape-primary" ],
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        /* 模块配置 */
+        "modules" : {
+            "Record" : {},
+            "Push" : {},
+            "Camera" : {},
+            "Geolocation" : {}
+        },
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_LOCATION_EXTRA_COMMANDS\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.BROADCAST_WAP_PUSH\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>"
+                ],
+                "minSdkVersion" : 23,
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
+            },
+            /* ios打包配置 */
+            "ios" : {
+                "dSYMs" : false,
+                "UIBackgroundModes" : "audio",
+                "plistcmds" : [
+                    "Set :NSMicrophoneUsageDescription 仅在服务中时录音, 留存后续发生医患问题时作为证据",
+                    "Set :NSLocationWhenInUseUsageDescription 仅在服务中时获取位置, 遇危险时好及时定位报警"
+                ],
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "获取服务中的照片上传以证明完成服务",
+                    "NSMicrophoneUsageDescription" : "仅在服务中时录音留存服务过程中的音频信息",
+                    "NSLocationWhenInUseUsageDescription" : "仅在服务中时获取位置留存服务过程中的位置信息",
+                    "NSLocationAlwaysUsageDescription" : "仅在服务中时获取位置留存服务过程中的位置信息",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "仅在服务中时获取位置留存服务过程中的位置信息"
+                },
+                "urlschemewhitelist" : [ "baidumap", "iosamap", "qqmap" ]
+            },
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "ad" : {},
+                "push" : {
+                    "unipush" : {
+                        "version" : "2",
+                        "offline" : true,
+                        "icons" : {
+                            "small" : {
+                                "ldpi" : "unpackage/logo/18.png",
+                                "mdpi" : "unpackage/logo/24.png",
+                                "hdpi" : "unpackage/logo/36.png",
+                                "xhdpi" : "unpackage/logo/46.png",
+                                "xxhdpi" : "unpackage/logo/72.png"
+                            }
+                        }
+                    }
+                },
+                "statics" : {},
+                "geolocation" : {
+                    "system" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "xxx",
+                        "UniversalLinks" : "https://zhuhuli.ioi.plus/apple-app-site-association/"
+                    }
+                },
+                "maps" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "useOriginalMsgbox" : true
+            }
+        },
+        "nativePlugins" : {
+            "KJ-AudioV2" : {
+                "__plugin_info__" : {
+                    "name" : "录音 实时帧pcm回调、实时分贝值、实时录音回调(双端)",
+                    "description" : "录音支持实时帧pcm回调、暂停、继续、后台、息屏、长时间、onFrameRecorded、实时分贝值 QQ群：478548584",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=11125",
+                    "android_package_name" : "com.herrs.zhuhuli.staff",
+                    "ios_bundle_id" : "com.herrs.zhuhuli.staff",
+                    "isCloud" : true,
+                    "bought" : 1,
+                    "pid" : "11125",
+                    "parameters" : {}
+                }
+            }
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : false
+        },
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "unipush" : {
+            "enable" : false
+        },
+        "permission" : {}
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "uniStatistics" : {
+        "enable" : true,
+        "version" : "2",
+        "reportInterval" : "10"
+    },
+    "vueVersion" : "3",
+    "h5" : {
+        "router" : {
+            "mode" : "history",
+            "base" : "/staff/"
+        },
+        "unipush" : {
+            "enable" : true
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-jd" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-lark" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "quickapp-webview-huawei" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "quickapp-webview-union" : {
+        "uniStatistics" : {
+            "enable" : true,
+            "version" : "2",
+            "debug" : true
+        }
+    }
+}
