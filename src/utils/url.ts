@@ -5,6 +5,5 @@ export const fullurl = (path: string) => {
         '/',
         path
     ].join('')
-    console.log('fullurl', url)
     return url
 }

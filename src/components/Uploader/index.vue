@@ -19,10 +19,9 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { useStaffStore } from '@/stores/user'
-import { toast } from '@/utils/util'
+import { getToken } from '@/utils/auth';
+import { showToast } from '@/utils/message';
 
-const staffStore = useStaffStore()
 
 /** Emit Start **/
 const emit = defineEmits(['update:modelValue'])
@@ -65,7 +64,7 @@ const versions = ref<string | null>('1.0.0')
  * @description 上传，不管成不成功都返回数据｜提示
  */
 const handleCallback = (params: any) => {
-    toast(JSON.parse(params.data).msg)
+    showToast(JSON.parse(params.data).msg)
 
     if (JSON.parse(params.data).code == 1) {
         fileList.value.push(JSON.parse(params.data).data.url)
@@ -87,7 +86,7 @@ const remove = (event: number | string) => {
 /** Life Cycle Start **/
 onMounted(() => {
     action.value = `${import.meta.env.VITE_APP_BASE_URL}/staffapi/upload/image`
-    token.value = staffStore.token
+    token.value = getToken()
 })
 /** Life Cycle End **/
 </script>
